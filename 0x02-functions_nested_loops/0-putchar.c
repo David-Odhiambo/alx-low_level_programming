@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- *  main - print main, followed by new line
- *  Return: 0
+ * main - Entry point
+ *
+ * Return: nothing, return void
  */
 
 int main(void)
@@ -19,5 +20,4 @@ int main(void)
 
 	return (0);
 }
-
 
