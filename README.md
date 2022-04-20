@@ -1,2 +1,1 @@
-# alx-low_level_programming
-C Programming Language
+Pointers, Arrays and Strings
