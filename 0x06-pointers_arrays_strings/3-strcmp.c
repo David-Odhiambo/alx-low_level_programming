@@ -1,14 +1,13 @@
 #include "main.h"
-#include "string.h"
 
 /**
- *_strcmp - compare 2 strings
- *@s1: string 1;
- *@s2: string 2;
+ * _strcmp - compare two strings.
+ *@s1: string 1.
+ *@s2: string 2.
  *Return: int.
  */
 
-int _strcmp(const char *str1,const char *st2);
+int _strcmp(char *s1, char *s2)
 {
 	int i = 0, cmp = 0;
 
