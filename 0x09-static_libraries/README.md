@@ -1,1 +1,1 @@
-Introduction to C Programming Static Libraries
+ This is all about introduction to Static library concepts in C Programming Language
