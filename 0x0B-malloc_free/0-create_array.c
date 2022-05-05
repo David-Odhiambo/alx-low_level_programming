@@ -1,27 +1,34 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 /**
- * main - create an array of chars
- * initialize with specific bars
- * @i: array.
- * Return: 0.
+ * create_array - creates an array of chars, and initializes it with
+ * a specific char
+ * @size: size of an array
+ * @c: character to initialize with
+ *
+ * Return: pointer.
  */
 
-void *malloc(size_t size);
 
-int main(void)
+char *create_array(unsigned int size, char c)
 {
-	char *string;
+	unsigned int i;
+	char *s;
 
-	string = malloc(sizeof(char) * 3);
-	if (string == NULL)
-		return;
-	string [0] = 'H';
-	string [1] = 'e';
-	string [2] = 'y';
-	string [3] = '\0';
-	malloc("%s\n", string);
-	free(string);
+	if (size <= 0)
+		return (0);
+
+	s = malloc(sizeof(char) * size);
+
+	if (s == 0)
+		return (0);
+
+	for (i = 0, i < size, i++)
+		*(s + i) = c;
+
+	*(s + i) = '\0';
+
+	return (s);
 }
-
