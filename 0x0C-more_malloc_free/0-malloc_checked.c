@@ -10,29 +10,13 @@
 
 void *malloc_checked(unsigned int b)
 {
-	int* ptr;
-	int n, i;
+	char *p;
 
-	printf("Enter number of elements:");
-	scanf("%d" , &n);
-	printf("Entered number of elements: %d\n" , n);
-
-	if (ptr == NULL) {
-		printf("Memory not allocated.\n");
-		exit(0);
+	p = malloc(b);
+	if (p == NULL)
+	{
+		exit(98);
+		return(NULL);
 	}
-	else {
-		printf("Memory successfully allocated using malloc.\n");
-
-		for (i = 0; i < n; ++i) {
-			ptr[i] = i + 1;
-		}
-
-		printf("The elements of the array are: ");
-		for (i = 0; i < n; ++i) {
-			printf("%d, ", ptr[i]);
-		}
-	}
-
-	return (pointer);
+	return(p);
 }
