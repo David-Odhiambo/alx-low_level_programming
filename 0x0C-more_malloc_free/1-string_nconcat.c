@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 /**
- * string_concat - concatenates two strings
+ * string_nconcat -  concatenates two strings
  * @s1: string1
  * @s2: string2
  * @n: n bytes of string 2
  *
- * return: Pointer to allocated memory of s1 + nbytes of s2
+ * Return: Pointer to allocated memory of s1 + nbytes of s2
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
@@ -24,10 +24,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	l1 = 0, l2 = 0;
 	while (*(s1 + l1))
 		l1++;
-	while (*(s2 +l2))
+	while (*(s2 + l2))
 		l2++;
 
-	if (n < 12)
+	if (n < l2)
 		l2 = n;
 
 	s = malloc(sizeof(char) * (l1 + l2 + 1));
@@ -36,10 +36,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (0);
 
 	for (i = 0; i < l1; i++)
-		*(s + i) = *(s1 +i);
+		*(s + i) = *(s1 + i);
 
 	for (i = 0, j = l1; i < l2; j++, i++)
-		*s(s + j) = *(s2 + i);
+		*(s + j) = *(s2 + i);
 
 	*(s + j) = '\0';
 
