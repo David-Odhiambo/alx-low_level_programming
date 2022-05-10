@@ -4,8 +4,8 @@
 /**
  * malloc_check - allocate memory
  * return pointer to allocated memory
- * @n: memory.
- * @Return: pointer.
+ * 
+ * @Return: p
  */
 
 void *malloc_checked(unsigned int b)
