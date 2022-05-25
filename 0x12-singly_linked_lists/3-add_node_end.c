@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <stdlib.h>
+
 int _strlen_recursion(char *s);
 
 /**
@@ -18,7 +18,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	}
 	new->str = strdup(str);
-	if (!new->str);
+	if (!new->str)
 	{
 		free(new);
 		return (NULL);
@@ -43,10 +43,11 @@ list_t *add_node_end(list_t **head, const char *str)
  * @s: string.
  * Return: length of @s.
  */
-int _strlen_recursion(char *t)
+int _strlen_recursion(char *s)
 {
-	if (*t == 0)
+	if (*s == 0)
 		return (0);
 	else
-		return (1 + _strlen_recursion(t + 1));
+		return (1 + _strlen_recursion(s + 1));
 }
+
