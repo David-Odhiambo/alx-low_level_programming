@@ -1,53 +1,53 @@
 #include "lists.h"
 
-int _strlen_recursion(char *s);
+/**
+ * _strlen - find string length
+ * @str: string
+ * Return: length
+ */
+int _strlen(const char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
 
 /**
- * add_node_end - adds a new node at the end of a list_t list.
- * @head: pointer to the first element of the list.
- * @str: string to set in the new node.
- * Return: address of the new element, or NULL if it failed
- **/
+ * add_node_end - add node to end of linked list
+ * @head: linked list
+ * @str: data for new node
+ * Return: address of new element, or NULL if failed
+ */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new, *aux = *head;
+	list_t *new_node, *temp;
 
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
-	{
+	if (str == NULL)
 		return (NULL);
-	}
-	new->str = strdup(str);
-	if (!new->str)
-	{
-		free(new);
+	if (strdup(str) == NULL)
 		return (NULL);
-	}
-	new->len = _strlen_recursion(new->str);
-	new->next = NULL;
 
-	if (aux)
+	new_node = malloc(sizeof(list_t));
+	if (new_node == NULL)
+		return (NULL);
+
+	new_node->str = strdup(str);
+	new_node->len = _strlen(str);
+	new_node->next = NULL;
+
+	if (*head == NULL)
+		*head = new_node;
+	else
 	{
-		while (aux->next)
-			aux = aux->next;
-		aux->next = new;
+		temp = *head;
+
+		while (temp->next != NULL)
+			temp = temp->next;
+		temp->next = new_node;
 	}
-	else
-		*head = new;
 
-	return (new);
+	return (new_node);
 }
-
-/**
- * _strlen_recursion - returns the length of a string.
- * @s: string.
- * Return: length of @s.
- */
-int _strlen_recursion(char *s)
-{
-	if (*s == 0)
-		return (0);
-	else
-		return (1 + _strlen_recursion(s + 1));
-}
-
