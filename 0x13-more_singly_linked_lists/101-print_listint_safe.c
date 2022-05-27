@@ -11,39 +11,39 @@
  */
 size_t looped_listint_len(const listint_t *head)
 {
-	const listint_t *k, *j;
+	const listint_t *y, *x;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
 
-	k = head->next;
-	j = (head->next)->next;
+	y = head->next;
+	x = (head->next)->next;
 
-	while (j)
+	while (x)
 	{
-		if (k == j)
+		if (y == x)
 		{
-			j = head;
-			while (j != k)
+			x = head;
+			while (y != x)
 			{
 				nodes++;
-				k = k->next;
-				j = j->next;
+				y = y->next;
+				x = x->next;
 			}
 
-			k = k->next;
-			while (k != j)
+			y = y->next;
+			while (y != x)
 			{
 				nodes++;
-				j = j->next;
+				y = y->next;
 			}
 
 			return (nodes);
 		}
 
-		j = j->next;
-		k = (k->next)->next;
+		y = y->next;
+		x = (x->next)->next;
 	}
 
 	return (0);
