@@ -4,7 +4,7 @@
 /* open */
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcnt1.h>
+#include <fcntl.h>
 
 /* close */
 #include <unistd.h>
